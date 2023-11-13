@@ -1,3 +1,27 @@
+
+:root {
+    /* --background-body: #202b38; */
+    --background: #161f27;
+    /* --background-alt: #1a242f; */
+    /* --selection: #1c76c5; */
+    /* --text-main: #dbdbdb; */
+    --text-bright: #fff;
+    /* --text-muted: #a9b1ba;
+    --links: #41adff; */
+    --focus: #0096bfab;
+    /* --border: #526980;
+    --code: #ffbe85;
+    --animation-duration: 0.1s;
+    /* --button-base: #0c151c; */
+    --button-hover: #040a0f;
+    /* --scrollbar-thumb: var(--button-hover);
+    --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%));
+    --form-placeholder: #a9a9a9;
+    --form-text: #fff;
+    --variable: #d941e2;
+    --highlight: #efdb43;
+    --select-arrow: svg-load('./assets/select-arrow.svg', fill: #efefef); */
+  }
 body {
     background: #202b38;
     color: #dbdbdb;
@@ -8,6 +32,135 @@ body {
     line-height: 1.4;
 }
 
+/* Typography */
+
 h1 {
-    color: blue;
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--text-bright);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 600;
+}
+
+q::before, q::after {
+    content: none;
+}
+
+blockquote,
+q {
+  border-left: 4px solid var(--focus);
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  font-style: italic;
+}
+
+blockquote > footer {
+    font-style: normal;
+    border: 0;
+  }
+
+address {
+    font-style: normal;
+}
+
+a[href^='mailto\:']::before {
+    content: '📧 ';
+}
+
+a[href^='tel\:']::before {
+    content: '📞 ';
+}
+
+a[href^='sms\:']::before {
+    content: '💬 ';
+}
+
+a > code,
+a > strong {
+  color: inherit;
+}
+
+/* Form elements */
+
+button,
+select,
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+input[type='checkbox'],
+input[type='range'],
+input[type='radio'] {
+  cursor: pointer;
+}
+
+input,
+select {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  color: var(--form-text);
+  background-color: var(--background);
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
+  background: var(--button-hover);
+}
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+input:disabled,
+select:disabled,
+button:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
